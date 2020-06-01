@@ -4,7 +4,8 @@ import './mine/mine_page.dart';
 import './news/news_page.dart';
 import './work/work_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:provider/provider.dart';
+import '../store/attendance_provider.dart';
 class IndexPage extends StatefulWidget {
   IndexPage({Key key}) : super(key: key);
 
@@ -66,6 +67,7 @@ class _IndexPageState extends State<IndexPage> {
               selectIndex = index;
               defaultTerm = tabBodies[index];
             });
+             Provider.of<AttendanceProvider>(context, listen: false).getNowTimeInfo();
           },
         ),
       body: IndexedStack(
