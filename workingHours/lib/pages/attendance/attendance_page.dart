@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './attendance_header.dart';
+import './attendance_work.dart';
 class AttendancePage extends StatefulWidget {
   AttendancePage({Key key}) : super(key: key);
 
@@ -22,7 +23,8 @@ class _AttendancePageState extends State<AttendancePage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-              AttendanceHeader()
+              AttendanceHeader(),
+              AttendanceWork()
           ],
         ),
       )
