@@ -26,7 +26,7 @@ class _AttendanceHeaderState extends State<AttendanceHeader> {
   // 背景图片控件
   Widget _imageWidget() {
     return Container(
-      height: ScreenUtil().setHeight(400),
+      height: ScreenUtil().setHeight(340),
       width: ScreenUtil().setWidth(750),
       child: Image.asset(
         'images/logo.png',
@@ -42,10 +42,10 @@ class _AttendanceHeaderState extends State<AttendanceHeader> {
         top: 10,
         child: Container(
           child: Text(
-            '啄木鸟网络科技有限公司',
+            '精诚合作 共筑未来',
             style: TextStyle(
                 color: Colors.black54,
-                fontSize: 24,
+                fontSize: 22,
                 fontWeight: FontWeight.bold),
           ),
         ));
