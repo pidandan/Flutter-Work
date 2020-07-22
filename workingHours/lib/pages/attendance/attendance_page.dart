@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './attendance_header.dart';
 import './attendance_work.dart';
+// 考勤主页
 class AttendancePage extends StatefulWidget {
   AttendancePage({Key key}) : super(key: key);
 
@@ -24,7 +25,8 @@ class _AttendancePageState extends State<AttendancePage> {
         child: Column(
           children: <Widget>[
               AttendanceHeader(),
-              AttendanceWork()
+              AttendanceWork(),
+              // AttendanceSignin(),
           ],
         ),
       )
