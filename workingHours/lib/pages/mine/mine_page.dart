@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './mine_info.dart';
+
 class MinePage extends StatefulWidget {
   MinePage({Key key}) : super(key: key);
 
@@ -12,7 +14,11 @@ class _MinePageState extends State<MinePage> {
     return Scaffold(
       appBar: AppBar(title: Text('我的')),
       body: Container(
-        child: Text('我的工作内容'),
+        child: Column(
+          children: <Widget>[
+            MineInfo(),
+          ],
+        ),
       ),
     );
   }

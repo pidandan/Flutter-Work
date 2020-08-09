@@ -26,7 +26,6 @@ class _AttendancePageState extends State<AttendancePage> {
           children: <Widget>[
               AttendanceHeader(),
               AttendanceWork(),
-              // AttendanceSignin(),
           ],
         ),
       )

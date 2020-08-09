@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import './pages/index_page.dart';
 import 'package:provider/provider.dart';
-import './store/attendance_provider.dart';
 import './store/counter.dart';
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => Counter()),
-        ChangeNotifierProvider(create: (_) => AttendanceProvider())
+        ChangeNotifierProvider(create: (_) => Counter())
       ],
       child: MyApp(),
     ),

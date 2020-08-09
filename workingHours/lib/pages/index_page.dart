@@ -5,7 +5,7 @@ import './news/news_page.dart';
 import './work/work_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import '../store/attendance_provider.dart';
+
 class IndexPage extends StatefulWidget {
   IndexPage({Key key}) : super(key: key);
 
@@ -37,9 +37,9 @@ class _IndexPageState extends State<IndexPage> {
   // 四个功能块
   final List<Widget> tabBodies = [
     AttendancePage(),
-    MinePage(),
+    WorkPage(),
     NewsPage(),
-    WorkPage()
+    MinePage(),
   ];
 
   // 默认底部选中的页面下标
@@ -59,17 +59,16 @@ class _IndexPageState extends State<IndexPage> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(245, 245, 245, 1.0),
       bottomNavigationBar: BottomNavigationBar(
-          items: bottomItems,
-          type: BottomNavigationBarType.fixed,
-          currentIndex: selectIndex,
-          onTap: (index){
-            setState(() {
-              selectIndex = index;
-              defaultTerm = tabBodies[index];
-            });
-             Provider.of<AttendanceProvider>(context, listen: false).getNowTimeInfo();
-          },
-        ),
+        items: bottomItems,
+        type: BottomNavigationBarType.fixed,
+        currentIndex: selectIndex,
+        onTap: (index) {
+          setState(() {
+            selectIndex = index;
+            defaultTerm = tabBodies[index];
+          });
+        },
+      ),
       body: IndexedStack(
         index: selectIndex,
         children: tabBodies,

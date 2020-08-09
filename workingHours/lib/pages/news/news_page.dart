@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './news_list.dart';
 class NewsPage extends StatefulWidget {
   NewsPage({Key key}) : super(key: key);
 
@@ -12,7 +13,8 @@ class _NewsPageState extends State<NewsPage> {
     return Scaffold(
       appBar: AppBar(title: Text('消息')),
       body: Container(
-        child: Text('消息中心内容'),
+        color: Colors.grey[200],
+        child: NewsList(),
       ),
     );
   }
