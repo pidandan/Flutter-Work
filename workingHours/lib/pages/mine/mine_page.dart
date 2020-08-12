@@ -14,6 +14,7 @@ class _MinePageState extends State<MinePage> {
     return Scaffold(
       appBar: AppBar(title: Text('我的')),
       body: Container(
+        color: Colors.grey[200],
         child: Column(
           children: <Widget>[
             MineInfo(),
