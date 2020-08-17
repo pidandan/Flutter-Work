@@ -46,7 +46,7 @@ class _NewsListState extends State<NewsList> {
   // 左侧icon图标展示
   Widget _leftIcon(String type) {
     return Container(
-      height: ScreenUtil().setHeight(180),
+      height: ScreenUtil().setHeight(160),
       width: ScreenUtil().setWidth(150),
       alignment: Alignment.center,
       child: type == 'notice'
@@ -72,7 +72,7 @@ class _NewsListState extends State<NewsList> {
   // 右侧消息的展示布局
   Widget _rightInfo(item) {
     return Container(
-      height: ScreenUtil().setHeight(180),
+      height: ScreenUtil().setHeight(160),
       width: ScreenUtil().setWidth(600),
       decoration: BoxDecoration(
           border:
@@ -81,12 +81,12 @@ class _NewsListState extends State<NewsList> {
         children: <Widget>[
           _topTitle(item),
           Container(
-            height: ScreenUtil().setHeight(80),
+            height: ScreenUtil().setHeight(70),
             alignment: Alignment.topLeft,
             padding: EdgeInsets.only(top: 2.0),
             child: Text(
               item['news'],
-              style: TextStyle(fontSize: 18, color: Colors.grey),
+              style: TextStyle(fontSize: 16, color: Colors.grey),
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             ),
@@ -99,7 +99,7 @@ class _NewsListState extends State<NewsList> {
   // 消息标题头
   Widget _topTitle(item) {
     return Container(
-      height: ScreenUtil().setHeight(90),
+      height: ScreenUtil().setHeight(80),
       alignment: Alignment.centerLeft,
       padding: EdgeInsets.only(top: 2.0),
       child: Row(
@@ -110,7 +110,7 @@ class _NewsListState extends State<NewsList> {
               item['type'] == 'notice'
                   ? '订阅消息'
                   : item['type'] == 'system' ? '系统消息' : '公司消息',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black87),
+              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600, color: Colors.black87),
             ),
           ),
           item['isNew']

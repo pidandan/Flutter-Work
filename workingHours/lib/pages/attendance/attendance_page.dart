@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './attendance_header.dart';
 import './attendance_work.dart';
+import '../public/color_help.dart';
 // 考勤主页
 class AttendancePage extends StatefulWidget {
   AttendancePage({Key key}) : super(key: key);
@@ -19,7 +20,7 @@ class _AttendancePageState extends State<AttendancePage> {
             style:TextStyle(color:Colors.white) ,
             ),
           centerTitle: true,
-          backgroundColor: Colors.indigo,
+          backgroundColor: HepColor("#7575F9"),
         ),
       body: SingleChildScrollView(
         child: Column(

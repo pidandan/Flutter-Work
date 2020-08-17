@@ -12,7 +12,7 @@ class _AttendanceHeaderState extends State<AttendanceHeader> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: <Widget>[_imageWidget(), _nameWidget(), _workTime()],
+      children: <Widget>[_imageWidget(),  _workTime()],
     );
   }
 
@@ -26,41 +26,27 @@ class _AttendanceHeaderState extends State<AttendanceHeader> {
         height: ScreenUtil().setHeight(340),
         width: ScreenUtil().setWidth(750),
         child: Image.asset(
-          'images/logo.png',
+          'images/beijing.png',
           fit: BoxFit.fill,
         ),
       ),
     );
   }
 
-  // 公司名称
-  Widget _nameWidget() {
-    return Positioned(
-        left: 20,
-        top: 10,
-        child: Container(
-          child: Text(
-            '精诚合作 共筑未来',
-            style: TextStyle(
-                color: Colors.black54,
-                fontSize: 22,
-                fontWeight: FontWeight.bold),
-          ),
-        ));
-  }
+
 
   // 上班时段
   Widget _workTime() {
     return Positioned(
-        left: 140,
-        bottom: 10,
+        left: 130,
+        bottom: -4,
         child: Container(
           height: ScreenUtil().setHeight(80),
           width: ScreenUtil().setWidth(750),
           child: Text(
             '工作时段：09:00~18:00',
             style: TextStyle(
-                color: Colors.white60,
+                color: Colors.black45,
                 fontSize: 20,
                 fontWeight: FontWeight.w600),
           ),
