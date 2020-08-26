@@ -6,7 +6,10 @@ class NewsList extends StatefulWidget {
 
   @override
   _NewsListState createState() => _NewsListState();
+  
 }
+
+
 
 class _NewsListState extends State<NewsList> {
   List newsList = [
@@ -25,19 +28,19 @@ class _NewsListState extends State<NewsList> {
       child: ListView.builder(
         itemCount: newsList.length,
         itemBuilder: (context, index) {
-          return _messageInfo(newsList[index]);
+          return _messageInfo(newsList[index],context);
         },
       ),
     );
   }
 
-  Widget _messageInfo(item) {
+  Widget _messageInfo(item,context) {
     return Container(
       color: Colors.white,
       child: Row(
         children: <Widget>[
           _leftIcon(item['type']),
-          _rightInfo(item),
+          _rightInfo(item,context),
         ],
       ),
     );
@@ -70,29 +73,32 @@ class _NewsListState extends State<NewsList> {
   }
 
   // 右侧消息的展示布局
-  Widget _rightInfo(item) {
-    return Container(
-      height: ScreenUtil().setHeight(160),
-      width: ScreenUtil().setWidth(600),
-      decoration: BoxDecoration(
-          border:
-              Border(bottom: BorderSide(width: 1, color: Colors.grey[200]))),
-      child: Column(
-        children: <Widget>[
-          _topTitle(item),
-          Container(
-            height: ScreenUtil().setHeight(70),
-            alignment: Alignment.topLeft,
-            padding: EdgeInsets.only(top: 2.0),
-            child: Text(
-              item['news'],
-              style: TextStyle(fontSize: 16, color: Colors.grey),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 1,
-            ),
-          )
-        ],
+  Widget _rightInfo(item,context) {
+    return InkWell(
+      child: Container(
+        height: ScreenUtil().setHeight(160),
+        width: ScreenUtil().setWidth(600),
+        decoration: BoxDecoration(
+            border:
+                Border(bottom: BorderSide(width: 1, color: Colors.grey[200]))),
+        child: Column(
+          children: <Widget>[
+            _topTitle(item),
+            Container(
+              height: ScreenUtil().setHeight(70),
+              alignment: Alignment.topLeft,
+              padding: EdgeInsets.only(top: 2.0),
+              child: Text(
+                item['news'],
+                style: TextStyle(fontSize: 16, color: Colors.grey),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
+            )
+          ],
+        ),
       ),
+      onTap: () => _newsDetail(context),
     );
   }
 
@@ -110,7 +116,10 @@ class _NewsListState extends State<NewsList> {
               item['type'] == 'notice'
                   ? '订阅消息'
                   : item['type'] == 'system' ? '系统消息' : '公司消息',
-              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600, color: Colors.black87),
+              style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87),
             ),
           ),
           item['isNew']
@@ -123,12 +132,18 @@ class _NewsListState extends State<NewsList> {
                   decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
-                      color: Colors.redAccent[200]
-                      ),
+                      color: Colors.redAccent[200]),
                 )
               : Container(),
         ],
       ),
     );
+  }
+
+  // 查看消息详情
+  _newsDetail(context) {
+    //  Navigator.of(context).pushNamed("news_detail", arguments: "你好详情页").then((value) => {});
+      Navigator.pushNamed(context, '/news_detail',arguments: { "id":123 });
+    //  Navigator.pushNamed(context, "news_detail");
   }
 }
