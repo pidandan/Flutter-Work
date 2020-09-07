@@ -4,7 +4,7 @@ import './mine/mine_page.dart';
 import './news/news_page.dart';
 import './work/work_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
+
 
 class IndexPage extends StatefulWidget {
   IndexPage({Key key}) : super(key: key);

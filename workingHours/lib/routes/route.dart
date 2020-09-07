@@ -9,6 +9,7 @@ final routes = {
   '/news_detail': (context, {arguments}) => NewsDetail(arguments: arguments),
 };
 //固定写法
+// ignore: top_level_function_literal_block
 var onGenerateRoute = (RouteSettings settings) {
   final String routeName = settings.name;
   print("Open page: $routeName");

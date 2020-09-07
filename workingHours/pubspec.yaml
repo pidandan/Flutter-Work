@@ -36,7 +36,7 @@ dependencies:
   flutter_screenutil: ^1.1.0
   url_launcher: ^5.0.1
     # 数据共享中心插件
-  provider: ^4.1.2
+  provider: ^4.3.2
     # 请提醒插件
   fluttertoast: ^4.0.0
     # 路由插件

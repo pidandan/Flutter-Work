@@ -1,17 +1,8 @@
 import 'package:flutter/material.dart';
-// import './pages/index_page.dart';
-import 'package:provider/provider.dart';
-import './store/counter.dart';
-// import './pages/newsDetail/detail_page.dart';
 import './routes/route.dart';
 
 void main() {
-  runApp(
-    MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => Counter())],
-      child: MyApp(),
-    ),
-  );
+   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -20,9 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '工时管理',
       theme: ThemeData(primarySwatch: Colors.indigo),
-      initialRoute: "/", //名为"/"的路由作为应用的home(首页)
+      //名为"/"的路由作为应用的home(首页)
+      initialRoute: "/", 
+      //引入剩余的路由文件信息
       onGenerateRoute: onGenerateRoute
-    //  home: IndexPage(),
     );
   }
 }
